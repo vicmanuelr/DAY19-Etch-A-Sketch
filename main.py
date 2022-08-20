@@ -15,17 +15,22 @@ def backward():
 
 def clockwise():
     current_heading = tim.heading()
-    tim.setheading(current_heading + 5)
+    tim.setheading(current_heading + 10)
 
 
 def counter_clock():
     current_heading = tim.heading()
-    tim.setheading(current_heading - 5)
+    tim.setheading(current_heading - 10)
 
 
-screen.onkey(fun=forward, key="w")
-screen.onkey(fun=backward, key="s")
-screen.onkey(fun=clockwise, key="d")
-screen.onkey(fun=counter_clock, key="a")
+def clear():
+    screen.reset()
+
+
+screen.onkeypress(fun=forward, key="w")
+screen.onkeypress(fun=backward, key="s")
+screen.onkeypress(fun=clockwise, key="d")
+screen.onkeypress(fun=counter_clock, key="a")
+screen.onkeypress(fun=clear, key="c")
 
 screen.exitonclick()
